@@ -44,7 +44,7 @@
 #
 
 echo "*** Launch minishift ..."
-minishift start --cpus 4 --disk-size 50g --memory 12288 --alsologtostderr --username 'rlucente@comcast.net' --password 'j8RhYEGt6L' --metrics 
+minishift start --cpus 4 --disk-size 50g --memory 12288 --alsologtostderr --username 'INSERT-RHN-USERID-HERE' --password 'INSERT-PASSWORD-HERE' --metrics 
 
 echo "*** Configure DNS resolution ..."
 IP_ADDR=`minishift ip`
