@@ -12,7 +12,7 @@ Once minishift is installed, simply type:
     ./setup.sh
 
 # Start the Minishift Instance
-Simply type:
+Make sure to put the correct credentials in this file for your [Red Hat Developers](https://developers.redhat.com) account.  You'll need one for this to work.  Simply type:
 
     . start.sh
 
