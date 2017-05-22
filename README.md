@@ -16,7 +16,7 @@ Simply type:
 
     . start.sh
 
-Note that the above command is `period space start.sh` so it correctly sets docker machine environment variables in the current shell so you can run commands like `docker images` to see what images are in the registry.
+Note that the above command is `period space start.sh` so it correctly sets docker machine environment variables in the current shell.  This enables you to run commands like `docker images` to see what images are in the registry.
 
 # Stop the Minishift Instance
 No special shell script here.  Just type:
