@@ -82,3 +82,11 @@ docker pull registry.access.redhat.com/jboss-datavirt-6/datavirt63-openshift:1.1
 docker pull registry.access.redhat.com/jboss-datavirt-6/datavirt63-openshift:1.0
 docker pull registry.access.redhat.com/jboss-datavirt-6/datavirt63-openshift:1.0-29
 
+# pull the images for 3scale api management platform
+docker pull registry.access.redhat.com/3scale-amp20/memcached:1.4.15-7
+docker pull registry.access.redhat.com/3scale-amp20/system:1.0-2
+docker pull registry.access.redhat.com/3scale-amp20/backend:1.0-2
+docker pull registry.access.redhat.com/3scale-amp20/apicast-gateway:1.0-3
+docker pull registry.access.redhat.com/rhscl/mysql-56-rhel7:5.6-13.14
+docker pull registry.access.redhat.com/rhscl/redis-32-rhel7:3.2-5.7
+
