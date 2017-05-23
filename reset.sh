@@ -3,5 +3,7 @@
 minishift stop
 minishift delete
 
-rm -fr library cdk3-demo-jdv/datasources.properties cdk3-demo-jdv/jgroups.jceks cdk3-demo-jdv/keystore.jks 3scale-demo/amp.yml
+pushd `dirname $0` &> /dev/null
+    rm -fr library jdv-demo/datasources.properties jdv-demo/jgroups.jceks jdv-demo/keystore.jks 3scale-demo/amp.yml
+popd &> /dev/null
 
