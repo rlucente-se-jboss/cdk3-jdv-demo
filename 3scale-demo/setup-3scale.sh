@@ -13,6 +13,8 @@ oc new-project 3scale-amp
 oc new-app --file amp.yml --param WILDCARD_DOMAIN=amp.${IP_ADDR}.nip.io --param ADMIN_PASSWORD=3scaleUser
 
 echo
-echo "This will take awhile for all the pods to spin up."
+echo "This will take awhile for all the pods to spin up.  Once they're"
+echo "all running, browse to https://3scale-admin.amp.${IP_ADDR}.nip.io"
+echo "and login using the admin/3scaleUser credentials."
 echo
 
