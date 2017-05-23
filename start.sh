@@ -63,7 +63,7 @@ echo "*** Configure docker environment ..."
 eval $(minishift docker-env)
 
 echo "*** Set up datavirt templates ..."
-pushd ~/minishift &> /dev/null
+pushd `dirname $0` &> /dev/null
     rm -fr library
     git clone https://github.com/openshift/library.git
 
