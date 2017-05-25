@@ -62,18 +62,21 @@ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
 echo "*** Configure docker environment ..."
 eval $(minishift docker-env)
 
-echo "*** Set up datavirt templates ..."
-pushd `dirname $0` &> /dev/null
-    rm -fr library
-    git clone https://github.com/openshift/library.git
-
-    oc login https://${IP_ADDR}:8443 -u system:admin
-
-    cd library/official/datavirt/templates
-    oc create -f datavirt63-basic-s2i.json -n openshift
-    oc create -f datavirt63-extensions-support-s2i.json -n openshift
-    oc create -f datavirt63-secure-s2i.json -n openshift
-popd &> /dev/null
+if [ $(oc get templates -n openshift | grep 'datavirt63' | wc -l) -ne 3 ]
+then
+    echo "*** Set up datavirt templates ..."
+    pushd `dirname $0`
+        rm -fr library
+        git clone https://github.com/openshift/library.git
+    
+        oc login https://${IP_ADDR}:8443 -u system:admin
+    
+        cd library/official/datavirt/templates
+        oc create -f datavirt63-basic-s2i.json -n openshift
+        oc create -f datavirt63-extensions-support-s2i.json -n openshift
+        oc create -f datavirt63-secure-s2i.json -n openshift
+    popd
+fi
 
 # pull the images that match the jboss-datavirt63-openshift image stream
 docker pull registry.access.redhat.com/jboss-datavirt-6/datavirt63-openshift:latest
