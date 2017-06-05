@@ -1,0 +1,24 @@
+Set up a custom gateway
+
+    oc login 192.168.99.100:8443 -u developer
+    oc new-project 3scale-gateway
+
+    oc new-build https://github.com/rlucente-se-jboss/basic-auth-gateway-customization --strategy=docker
+
+    oc get is/basic-auth-gateway-customization
+
+open browser to https://rlucente-admin.3scale.net
+in top right corner, Personal Settings -> Token -> Add Access Token
+name it dv-token and check all three boxes
+copy the token to somewhere safe!!
+
+    oc secret new-basicauth apicast-configuration-url-secret --password=https://<ACCESS_TOKEN>@rlucente-admin.3scale.net
+
+Click the API tab on the 3scale web app to get the service id
+
+    oc new-app -f https://raw.githubusercontent.com/3scale/apicast/v3.0.0/openshift/apicast-template.yml -p IMAGE_NAME=<IMAGE_NAME> -p SERVICES_LIST=<Service ID> -p LOG_LEVEL=info
+
+    oc env dc/apicast THREESCALE_DEPLOYMENT_ENV-
+
+    oc expose service/apicast
+
