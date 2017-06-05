@@ -171,3 +171,15 @@ Things to talk about while waiting for builds:
 - Templates
 - Webhooks and Image Change Triggers
 
+    oc env dc/myphp \
+        MYSQL_SERVICE_HOST=mysql.test.svc.cluster.local \
+        MYSQL_SERVICE_PORT=3306 \
+        MYSQL_SERVICE_DATABASE=myphp \
+        MYSQL_SERVICE_USERNAME=myphp \
+        MYSQL_SERVICE_PASSWORD=myphp
+
+    curl -L -s http://myphp-test.192.168.99.100.nip.io &> /dev/null
+    curl -L -s http://myphp-test.192.168.99.100.nip.io &> /dev/null
+    curl -L -s http://myphp-test.192.168.99.100.nip.io &> /dev/null
+    curl -L -s http://myphp-test.192.168.99.100.nip.io &> /dev/null
+
