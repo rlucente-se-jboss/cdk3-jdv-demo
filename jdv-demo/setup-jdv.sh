@@ -112,4 +112,10 @@ echo "		--> (odata 2) http://${OPENSHIFT_APP_NAME}-${OPENSHIFT_PROJECT}.${OPENSH
 echo "		--> (odata 4) http://${OPENSHIFT_APP_NAME}-${OPENSHIFT_PROJECT}.${OPENSHIFT_APPS_DOMAIN}"'/odata4/country-ws/country/Countries?$top=5&$format=json'
 echo "==============================================="
 
+echo
+echo " Make sure to fix the user_key in both URLs"
+echo " curl -k -u teiidUser:redhat1! 'https://api-3scale-apicast-staging.amp.192.168.99.100.nip.io/odata4/country-ws/country/Countries?user_key=491a82def7fb7e4a25cd67bb6f755618' | jq '.'"
+echo " curl -k -u teiidUser:redhat1! 'https://api-3scale-apicast-staging.amp.192.168.99.100.nip.io/odata4/country-ws/country/Countries('\''Zimbabwe'\'')?user_key=491a82def7fb7e4a25cd67bb6f755618' | jq '.'"
+echo
+
 echo "Done."
