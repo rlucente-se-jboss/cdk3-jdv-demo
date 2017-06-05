@@ -22,7 +22,7 @@
 
 minishift setup-cdk --default-vm-driver virtualbox --force --alsologtostderr
 
-# put oc command on search path
+echo Put oc command on search path ...
 OC_PATH=$(find $HOME/.minishift -type f -name oc)
 ln -sf $OC_PATH $(brew --prefix)/bin
 
